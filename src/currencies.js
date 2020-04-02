@@ -26,6 +26,7 @@ const HBARValidator = require('./hbar_validator')
 const STXValidator = require('./stx_validator')
 const ALGOValidator = require('./algo_validator')
 const BCHValidator = require('./bitcoincash_validator')
+const ERDValidator = require('./erd_validator')
 
 // defines P2PKH and P2SH address types for standard (prod) and testnet networks
 const CURRENCIES = [{
@@ -449,6 +450,10 @@ const CURRENCIES = [{
   name: 'EOS',
   symbol: 'eos',
   validator: EOSValidator
+}, {
+  name: 'Elrond',
+  symbol: 'erd',
+  validator: ERDValidator
 }, {
   name: 'BitTorrent',
   symbol: 'btt',

@@ -77,11 +77,11 @@ describe('WAValidator.validate()', function () {
       valid('3NJZLcZEEYBpxYEUGewU4knsQRn1WM5Fkt', 'bch')
       valid('2MxKEf2su6FGAUfCEAHreGFQvEYrfYNHvL7', 'bitcoincash', 'testnet')
 
-      //SLP addresses
+      // SLP addresses
       valid('pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsvryq5wf0k', 'bitcoincash', 'both', ['all'])
       valid('pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsvryq5wf0k', 'bitcoincash', 'both', ['slpaddr'])
 
-      //Cash addresses
+      // Cash addresses
       valid('bitcoincash:pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g', 'bitcoincash', 'both', ['all'])
       valid('bitcoincash:pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g', 'bitcoincash', 'both', ['cashaddr'])
     })
@@ -477,6 +477,11 @@ describe('WAValidator.validate()', function () {
       valid('bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23', 'bnb')
       valid('bnb142q467df6jun6rt5u2ar58sp47hm5f9wvz2cvg', 'bnb')
     })
+
+    it('should return true for correct ERD addresses', () => {
+      valid('erdmnzwh4jr19tv4daex1dba4pu8ldj0dk85dkmgyta542zcue8vddtnlil9qt', 'erd')
+      valid('erdxnyzyx5shyc2rsrgxim5rs79g87r6ibkg99390j9irz7sduwwww2bvl26b4', 'erd')
+    })
     it('should return true for correct Monero addresses', () => {
       valid('8BMsVKsZ6kdUVWi4o67iWTe3ZaGL4Qc7KjfLVcPer4v2jNTKfEoXtJoL48EHt8cqdZWBQkjzttygpHJyhZcnqLb1JTfVkim', 'xmr')
       valid('45HqZMyS2VmKzD4V17U7fT2HZj9ZgYgBXJsAJHkjj8QFVuhCxRSxsJB8HrZmGVyFr8HEsDxbKhFCyVLiauFtiPknJeDFAMj', 'xmr')
@@ -568,7 +573,7 @@ describe('WAValidator.validate()', function () {
 
     it('should return false for incorrect bitcoincash addresses', function () {
       commonTests('bitcoincash')
-      //legacy
+      // legacy
       invalid('38ty1qB68gHsiyZ8k3RPeCJ1wYQPrUCPPr', 'bitcoincash', 'both', ['cashaddr'])
       invalid('pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsvryq5wf0k', 'bitcoincash', 'both', ['cashaddr'])
       invalid('bitcoincash:pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g', 'bitcoincash', 'both', ['legacy'])
