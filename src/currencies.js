@@ -455,6 +455,10 @@ const CURRENCIES = [{
   symbol: 'erd',
   validator: ERDValidator
 }, {
+  name: 'Elrond',
+  symbol: 'egld',
+  validator: ERDValidator
+}, {
   name: 'BitTorrent',
   symbol: 'btt',
   addressTypes: { prod: ['41'] },
